@@ -7,7 +7,9 @@ const searchFood = () => {
 
     document.querySelector('#err').style.display = 'none'
     if( searchText == ''){
-        document.querySelector('#err').style.display = 'block'
+        const showResult = document.getElementById('search-result');
+        showResult.textContent = ''
+      document.querySelector('#err').style.display = 'block'
     }else{
         document.querySelector('#err').style.display = 'none'
         const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`
